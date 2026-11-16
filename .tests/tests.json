@@ -1,0 +1,191 @@
+{
+  "title": "Lab 8 - Conversion Functions",
+  "cases": [
+    {
+      "type": "header",
+      "name": "Header is filled in"
+    },
+    {
+      "type": "output",
+      "name": "Positive values",
+      "stdin": [
+        "10",
+        "3",
+        "25",
+        "banana",
+        "a"
+      ],
+      "expect": [
+        "Enter a distance in miles: Kilometres: 16.1",
+        "Enter minutes: Enter seconds: Total seconds: 205",
+        "Enter some text: Enter a letter to count: Letter count: 3"
+      ]
+    },
+    {
+      "type": "output",
+      "name": "Negative values give None",
+      "stdin": [
+        "-4",
+        "2",
+        "-1",
+        "Mississippi",
+        "s"
+      ],
+      "expect": [
+        "Enter a distance in miles: Kilometres: None",
+        "Enter minutes: Enter seconds: Total seconds: None",
+        "Enter some text: Enter a letter to count: Letter count: 4"
+      ]
+    },
+    {
+      "type": "output",
+      "name": "Zeros and a missing letter",
+      "stdin": [
+        "0",
+        "0",
+        "59",
+        "kettle",
+        "z"
+      ],
+      "expect": [
+        "Enter a distance in miles: Kilometres: 0.0",
+        "Enter minutes: Enter seconds: Total seconds: 59",
+        "Enter some text: Enter a letter to count: Letter count: 0"
+      ]
+    },
+    {
+      "type": "comments",
+      "name": "Code is commented",
+      "min": 3
+    }
+  ],
+  "challenges": [
+    {
+      "title": "Challenge - Password Check Function",
+      "file": "challenges/password_function.py",
+      "function": "password_check",
+      "cases": [
+        {
+          "type": "function",
+          "name": "Valid password",
+          "function": "password_check",
+          "args": [
+            "Sunset9road"
+          ],
+          "expect": "Password is valid."
+        },
+        {
+          "type": "function",
+          "name": "Only too short",
+          "function": "password_check",
+          "args": [
+            "Harbor4"
+          ],
+          "expect": "Error: Password must be at least 8 characters long."
+        },
+        {
+          "type": "function",
+          "name": "Short, lowercase only, no digit",
+          "function": "password_check",
+          "args": [
+            "dog"
+          ],
+          "expect": "Error: Password must be at least 8 characters long.\nError: Password must contain at least one uppercase letter.\nError: Password must contain exactly one digit."
+        },
+        {
+          "type": "function",
+          "name": "No lowercase, two digits",
+          "function": "password_check",
+          "args": [
+            "BRIGHT55LIGHTS"
+          ],
+          "expect": "Error: Password must contain at least one lowercase letter.\nError: Password must contain exactly one digit."
+        }
+      ]
+    },
+    {
+      "title": "Challenge - Shift Letter",
+      "file": "challenges/caesar_shift.py",
+      "function": "shift_letter",
+      "cases": [
+        {
+          "type": "function",
+          "name": "Shifts c by 4",
+          "function": "shift_letter",
+          "args": [
+            "c",
+            4
+          ],
+          "expect": "g"
+        },
+        {
+          "type": "function",
+          "name": "Wraps past z",
+          "function": "shift_letter",
+          "args": [
+            "x",
+            5
+          ],
+          "expect": "c"
+        },
+        {
+          "type": "function",
+          "name": "Capital, negative shift",
+          "function": "shift_letter",
+          "args": [
+            "M",
+            -3
+          ],
+          "expect": "J"
+        },
+        {
+          "type": "function",
+          "name": "Leaves symbols alone",
+          "function": "shift_letter",
+          "args": [
+            "?",
+            7
+          ],
+          "expect": "?"
+        }
+      ]
+    },
+    {
+      "title": "Challenge - Caesar Shift",
+      "file": "challenges/caesar_shift.py",
+      "function": "caesar_shift",
+      "cases": [
+        {
+          "type": "function",
+          "name": "Encodes a sentence",
+          "function": "caesar_shift",
+          "args": [
+            "Meet at noon!",
+            3
+          ],
+          "expect": "Phhw dw qrrq!"
+        },
+        {
+          "type": "function",
+          "name": "Decodes with a negative shift",
+          "function": "caesar_shift",
+          "args": [
+            "Phhw dw qrrq!",
+            -3
+          ],
+          "expect": "Meet at noon!"
+        },
+        {
+          "type": "function",
+          "name": "Shift larger than 26",
+          "function": "caesar_shift",
+          "args": [
+            "zebra 42",
+            30
+          ],
+          "expect": "difve 42"
+        }
+      ]
+    }
+  ]
+}
