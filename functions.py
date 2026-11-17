@@ -43,7 +43,7 @@ def late_calculator(grade, lates=0):
 
     # deducts 5% per late
     lates_deduction = lates * 5
-    return
+    return grade - lates_deduction
    
 
 
@@ -60,15 +60,26 @@ def add_number(num):
     return
 
 
-# def add_list(my_list):
-#     # make a copy of the list, so that the original list doesn't get modified
-#     new_list = my_list.copy()
-#     new_list.append(1)
-#     print(f"list within function: {new_list}")
-#     return
+def add_list(my_list):
+    # make a copy of the list, so that the original list doesn't get modified
+    new_list = my_list.copy()
+    new_list.append(1)
+    print(f"list within function: {new_list}")
+    return
 
+# --- Lists and dictionaries in functions -------------------------------------
+# what we're used to: the original variable does not change outside the function
+num = 10
+add_number(num)
+print(f"num outside function: {num}")
 
+# print()
+# # a list (or dictionary) parameter could change the original, so the function works on a copy
+# number_list = [10, 9, 8]
+# add_list(number_list)
+# print(f"list outside function: {number_list}")
 # The program runs starting here. Above this line, the functions are just defined.
+
 menu()
 menu()
 print(hypotenuse(8,6))
@@ -90,14 +101,4 @@ print(f"Hypotenuse: {hypotenuse(13, 12)}")
 print(f"Hypotenuse: {hypotenuse(-2, 4)}")
 
 
-# # --- Lists and dictionaries in functions -------------------------------------
-# # what we're used to: the original variable does not change outside the function
-# num = 10
-# add_number(num)
-# print(f"num outside function: {num}")
 
-# print()
-# # a list (or dictionary) parameter could change the original, so the function works on a copy
-# number_list = [10, 9, 8]
-# add_list(number_list)
-# print(f"list outside function: {number_list}")
